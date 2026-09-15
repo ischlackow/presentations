@@ -1,0 +1,751 @@
+---
+title: "Using AI to help with code writing"
+author: "Iryna Schlackow"
+institute: "<br> Student Data Insights, Education Policy Support <br> (formerly HERC, NDPH)"
+date: "15 September 2026"
+format: 
+  revealjs:
+    logo: "images/Square RBG.png"
+    pdf-print-background: true
+    css: styles.css
+    embed-resources: true
+    slide-number: "c/t"
+    width: 1920
+    height: 1080
+---
+
+## Talk overview
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+* Using AI to help with code writing (Sep 2025)
+* Using AI to help with code writing (Sep 2026)
+* What makes the code well-structured?
+* Discussion
+
+:::
+
+::: {.column width="50%"}
+
+<img src="images/chatgpt_pic.png" height="500"/>
+
+:::
+
+:::
+
+::: {.acknowledgements}
+Acknowledgments to Peter Chetwynd, Craig Smith, Connair Russell-Wilks, our R user group and many others for inspiration and constructive feedback
+:::
+
+# Using AI to help with code writing (Sep 2025)
+
+------------------------------------------------------------------------
+
+## Context
+
+-   Hypothetical higher education institution; linked student-level data
+
+-   Comparing performance by student characteristic (e.g. gender) and trying to explain the difference
+
+-   Using AI as an interactive coding assistant; query punctuation and spelling preserved
+
+-   15+ years of using R (pre-tidyverse; pre-Stack Overflow)
+
+
+<center><img src="images/chch2.png" height="500"/></center>
+
+<center><font size = "3">Source: <https://oxfordvisit.com/articles/harry-potter-filming-locations-great-hall-christ-church/#google_vignette></font></center>
+
+------------------------------------------------------------------------
+
+## The code that you always forget
+
+::: {.mybox}
+how to apply the same operation to several columns in R tidyverse
+:::
+
+::: {.mybox}
+give me an example of names_pattern argument in pivot_wider in tidyverse
+:::
+
+::: {.mybox}
+How to construct a regular expression in R containing letter b and not containing letter a
+:::
+
+-   Short queries; 
+
+-   excellent concise examples, detailed explanations;
+
+-   more useful than Google search due to interactivity;
+
+-   helpful suggestions.
+
+<img src="images/regex_suggestion.png" height="350"/>
+
+------------------------------------------------------------------------
+
+## The code that you want to adapt
+
+::: {.mybox}
+Convert this flextable code <...> into kable syntax
+:::
+
+::: {.mybox}
+Using tidyverse, I want to parameterise this code: <...> I have several columns I want to apply this case_when to
+:::
+
+::: {.mybox}
+I now want to keep column names and supply variables as a parameter vector
+:::
+
+::: {.mybox}
+now I want to transpose, have gender on top, variable at the bottom. result is still a data.frame
+:::
+
+-   most useful when done iteratively and in small incremental steps
+
+------------------------------------------------------------------------
+
+## New code/functionality
+
+::: {.mybox}
+explain the margin argument in the plot layout command? I am combining two ggplot objects with plotly
+:::
+
+::: {.mybox}
+kable. I need to left-align heading produced by pack-rows. can I do it with css?
+:::
+
+::: {.mybox}
+I am writing a quarto revealjs presentation. I need to provide slides in a 16:9 ratio. how can I do this
+:::
+
+-   Generally good experience, BUT:
+
+-   good in producing code that looks plausible; hallucinations with niche requests;
+
+-   fine-tuning the query and/or running through several LLMs might help;
+
+-   <span style="color:red;">code always needs to be checked.</span>
+
+<img src="images/aspect_ratio_gemini.png" width="30%" style="display:inline-block;margin-right:2%;" />
+<img src="images/aspect_ratio_github.png" width="30%" style="display:inline-block;" />
+------------------------------------------------------------------------
+
+## Plausible code vs working code
+
+::: {.mybox}
+quarto html; how can I generate list of tables & figures?
+:::
+
+::: {.mybox2}
+This is my YAML <...>. Add crossref: true there 
+:::
+
+::: {.mybox3}
+error: (line 4, columns 11--15) Field "crossref" has value true, which must instead be 'false'
+:::
+
+::: {.mybox4}
+but then nothing is produced
+:::
+
+::: {.mybox5}
+i added this but no list was produced
+:::
+<br>
+<center><img src="images/code_works.jpg" height="350"/></center>
+
+<center><font size = "3">Source: <https://www.redbubble.com/i/art-board-print/The-Code-Doesn-t-Work-Why-The-Code-Works-Why-funny-programming-meme-by-ProgrammingMeme/65384467.7Q6GI></font></center>
+
+------------------------------------------------------------------------
+
+## Summary: my experience with AI (Sep 2025)
+
+- Generally positive experience; saves time and increases quality
+
+- A non-judgmental tutor available 24/7; polite, (overly) positive and patient. Motivating for learning new things
+
+- Answers are obtained in interactive manner
+
+- The more effort goes into the prompt, there more useful the output. What is it you need?
+
+-   Answers need to be checked and understood; hallucinations with less standard questions and long conversation
+
+<center><img src="images/wisdom_of_the_ancients.png" height="350"/></center>
+
+<center><font size = "3">Source: <https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png></font></center>
+
+# Using AI to help with code writing (Sep 2026)
+
+------------------------------------------------------------------------
+
+## Same old
+
+* The code that you always forget
+* The code that you want to adapt
+* New code/functionality
+
+::: {.fragment}
+* My baseline knowledge has changed
+* My confidence in using AI has changed
+:::
+
+------------------------------------------------------------------------
+
+## Using AI as a code reviewer
+
+::: {.mybox}
+I will post code files here. Please check for obvious errors. Do not re-write, give a bullet list of suggestions.
+:::
+
+::: {.mybox}
+Check for obvious improvements
+:::
+
+::: {.mybox}
+Check against the tidyverse style guide
+:::
+
+- No feel for an elegant/simple answer; no understanding of the context;
+- good for spotting style inconsistencies and simple errors;
+- good for making suggestions on how to structure the code.
+
+# What makes the code well-structured?
+
+------------------------------------------------------------------------
+
+## Disclaimer
+
+* chatGPT was used in producing the following content but I checked and agreed with the findings
+* The examples are based on my code (and my opinion)
+* All code is in R, but applicable to other languages
+* Code is presented for illustrative purposes and might not be executable
+
+<br>
+<center><img src="images/code_works_first_time.png" height="650"/></center>
+
+<center><font size = "3">Source: <https://programmerhumor.io/programming-memes/when-your-code-works-on-the-first-try/></font></center>
+
+------------------------------------------------------------------------
+
+## Ten tips for clean, well-organised statistical code
+
+1. Organise code into clear sections
+1. Use meaningful names
+1. Keep each step simple
+1. Comment the *why*, not the obvious
+1. Keep important choices explicit 
+1. Run code in logical chunks
+1. Check results as you go 
+1. Don't overwrite raw data
+1. Avoid unnecessary repetition
+1. Use a master file to make the analysis reproducible
+
+------------------------------------------------------------------------
+
+## Organise code into clear sections
+
+```r
+#####################################################################
+### Load libraries and files ----
+#####################################################################
+
+library(tidyverse)
+library(ggiraph)
+
+### parameters ----
+
+subject_str <- "biology"
+
+### directories and filenames ----
+
+project_dir <- "//connect.ox.ac.uk/ADMN/AcademicPolicy/Student Data Insights/Projects/Awarding gaps/MPLS"
+data_dir <- file.path(project_dir, "data/processed")
+output_dir <- file.path(project_dir, "output", subject_str)
+
+### load data ----
+
+df <- read_rds(file.path(data_dir, str_c("df_", subject_str, ".rds")))
+
+#####################################################################
+### Data preparation and parameters ----
+#####################################################################
+
+### prepare the datasets ----
+
+y0 <- 2019
+y1 <- 2024
+
+# filter out the correct year
+df <- df %>%
+  filter(ucas_cycle >= y0 & ucas_cycle <= y1)
+  
+# separate out those who left after 3rd year & stayed on until 4th year
+df3 <- df %>%
+  filter(exited)
+df4 <- df %>%
+  filter(!exited)
+  
+#####################################################################
+### Graphical parameters ----
+#####################################################################
+
+colour_m <- "#4285f4"  # Google blue
+colour_f <- "#ea4335"  # Google red
+
+#####################################################################
+### Data distribution: density and quantiles ----
+#####################################################################
+
+# common parameters
+var_gender <- "gender"
+var_subgroup_p <- "fee_2l"
+var_subgroup_t <- "fee_2l"
+
+# input list
+param_list <- list(
+  # average FPE grade
+  list(fpe_or_fhs = "fpe", var_outcome = "result_mean_fpe", xlab_str = "Average FPE grade", filename_prefix = "average fpe grade"),
+  # average FHS grade
+  list(fpe_or_fhs = "fhs", var_outcome = "result_mean_fhs", xlab_str = "Average FHS grade", filename_prefix = "average fhs grade")
+)
+
+# run the wrapper
+for (param in param_list) {
+  
+  # read off parameters
+  var_outcome <- param$var_outcome
+  xlab_str <- param$xlab_str
+  filename_prefix <- param$filename_prefix
+  fpe_or_fhs <- param$fpe_or_fhs
+  
+  # read off correct dataset
+  df_temp <- if (fpe_or_fhs == "fpe") df else df4
+  
+  # run the wrapper
+  .data_distribution_wrapper(df = df_temp, 
+                             var_gender = var_gender, var_subgroup_p = var_subgroup_p, var_subgroup_t = var_subgroup_t, var_outcome = var_outcome,
+                             xlab_str = xlab_str,
+                             output_dir = output_dir, filename_prefix = filename_prefix, subject_str = subject_str) 
+  
+  # run the wrapper: UK only
+  .data_distribution_wrapper(df = df_temp %>% filter(!!sym(var_subgroup_p) == "UK"), 
+                             var_gender = var_gender, var_subgroup_p = var_subgroup_p, var_subgroup_t = var_subgroup_t, var_outcome = var_outcome,
+                             xlab_str = xlab_str,
+                             output_dir = output_dir, filename_prefix = str_c(filename_prefix, " (UK)"), subject_str = subject_str,
+                             generate_p_subgroup = FALSE, generate_t = FALSE) 
+}
+
+
+  
+```
+
+------------------------------------------------------------------------
+
+## Use meaningful names
+
+```r
+
+opportunity_oxford_eligibility
+
+shortlisted_val
+
+state_school_flag
+
+alevel_further_maths
+
+college_1_subject_1_interview_1_score
+
+mat_score_num
+
+mat_score_num_z
+
+disability_group_fpe
+
+temp
+
+alpha
+
+beta
+
+gamma
+
+```
+------------------------------------------------------------------------
+
+## Comment the *why*, not the obvious
+
+```r
+
+# NB: interview scores only available from 2018
+# Further, scale has changed since 2020
+# so can only use 2020-2025
+# take out 2025 as no ethnicity information
+
+y0 <- 2020
+y1 <- 2024  
+
+# filter out the correct year
+df <- df %>%
+  filter(ucas_cycle >= y0 & ucas_cycle <= y1)
+
+```
+
+------------------------------------------------------------------------
+
+## Comment the *why*, not the obvious
+
+```r
+
+############################################################
+### Run the wrapper and check everything is okay
+############################################################
+
+### wrapper output ----
+
+alpha <- .data_prep_wrapper(df_ptes = df_ptes, df_domains = df_domains, df_mad = df_mad)
+
+### check output ----
+
+names(alpha)
+nrow(alpha$df)
+
+# which columns were removed in the initial tidy-up
+# should be irrelevant columns, not to be presented in the dashboard
+alpha$colnames_removed
+
+# questions without an associated domain 
+# these questions will be removed from the final output
+alpha$questions_without_domain 
+
+# once NAs are removed, is every username in MAD unique?
+# should be TRUE
+alpha$mad_id_uniqueness_flag
+
+# is the value column in MAD (eg Distinct Students FHI) always equal to 1?
+# should be 0; we are looking for deviations from the rule
+alpha$n_mad_last_column
+
+# does every username from PTES appear in MAD?
+# should be numeric 0
+alpha$n_ptes_mad_id_merged
+
+
+```
+
+------------------------------------------------------------------------
+
+## Keep important choices explicit 
+
+```r
+
+#####################################################################
+### Load libraries and files ----
+#####################################################################
+
+library(tidyverse)
+library(ggiraph)
+
+### parameters ----
+
+subject_str <- "biology"
+
+### directories and filenames ----
+
+project_dir <- "//connect.ox.ac.uk/ADMN/AcademicPolicy/Student Data Insights/Projects/Awarding gaps/MPLS"
+data_dir <- file.path(project_dir, "data/processed")
+output_dir <- file.path(project_dir, "output", subject_str)
+
+### load data ----
+
+df <- read_rds(file.path(data_dir, str_c("df_", subject_str, ".rds")))
+
+```
+
+------------------------------------------------------------------------
+
+## Check results as you go 
+
+```r
+
+# A* in maths, further maths or physics
+head(df_alevels_achieved)
+temp <- df_alevels_achieved %>%
+  mutate(astar_req = astar * (alevel_maths + alevel_physics + alevel_further_maths))
+table(temp$astar_req, exclude = NULL)
+table(temp$astar, temp$astar_req, exclude = NULL)
+
+# A*A*A
+temp <- temp %>%
+  group_by(app_no) %>%
+  summarise(astar_req = sum(astar_req), 
+            astar = sum(astar), 
+            a_astar = sum(a_astar),
+            alevel_maths = sum(alevel_maths + alevel_further_maths),
+            alevel_physics = sum(alevel_physics)) %>%
+  mutate(offer_met = astar_req >= 2 & astar >= 2 & a_astar >= 3 & alevel_maths >= 1 & alevel_physics >= 1)
+head(temp)
+
+### check ----
+
+table(temp$astar, exclude = NULL)
+table(temp$a_astar, exclude = NULL)
+table(temp$astar_req, exclude = NULL)
+table(temp$offer_met, exclude = NULL)
+table(temp$offer_met, temp$astar, exclude = NULL)
+table(temp$offer_met, temp$a_astar, exclude = NULL)
+table(temp$offer_met, temp$alevel_maths, exclude = NULL)
+table(temp$offer_met, temp$alevel_physics, exclude = NULL)
+
+nrow(df)
+df <- left_join(df, temp %>% select(app_no, offer_met))
+nrow(df)
+
+table(df$offer_met, exclude = NULL)
+table(df$offer_met, df$homeeuos, exclude = NULL)
+
+# NA
+id_temp <- df %>%
+  filter(fee_2l == "UK") %>%
+  filter(is.na(offer_met)) %>%
+  sample_n(10) %>%
+  select(app_no) %>%
+  pull()
+id_temp
+for (id_temp_temp in id_temp) {
+  print("***")
+  print(id_temp_temp)
+  print(df_alevels_achieved %>%
+          filter(app_no %in% id_temp_temp) %>%
+          select(subject, grade))
+}
+# all good; no A-level data
+
+# TRUE
+id_temp <- df %>%
+  filter(offer_met) %>%
+  sample_n(10) %>%
+  select(app_no) %>%
+  pull()
+id_temp
+for (id_temp_temp in id_temp) {
+  print("***")
+  print(id_temp_temp)
+  print(df_alevels_achieved %>%
+          filter(app_no %in% id_temp_temp) %>%
+          select(subject, grade))
+}
+# all good
+
+# FALSE
+id_temp <- df %>%
+  filter(!offer_met) %>%
+  sample_n(10) %>%
+  select(app_no) %>%
+  pull()
+id_temp
+for (id_temp_temp in id_temp) {
+  print("***")
+  print(id_temp_temp)
+  print(df_alevels_achieved %>%
+          filter(app_no %in% id_temp_temp) %>%
+          select(subject, grade))
+}
+# all good; a mixture of those who didn't make A*A*A and those who did but with A* in a wrong subject
+
+
+```
+
+------------------------------------------------------------------------
+
+## Avoid unnecessary repetition: loops
+
+```r
+
+var_list <- c(
+  "bme_flag",
+  "flag_comb_num",
+  "state_school_flag",
+  "alevel_chemistry",
+  "alevel_physics",
+  "alevel_maths"
+)
+
+for (var_temp in var_list) {
+
+  print(var_temp)
+
+  print(
+    table(temp[[var_temp]], exclude = NULL)
+  )
+}
+
+```
+
+------------------------------------------------------------------------
+
+## Avoid unnecessary repetition: functions
+
+
+```r
+
+utility_calc <- function(mob, selfc, usualact, pain, anx) {
+  
+  # Constant term applied whenever patient has problem in any of the five domains
+  # ie at least one of the answers is >1
+  constant <- -0.081 * ((mob + selfc + usualact + pain + anx) > 5) 
+  
+  # Apply decrements to utility (tariff weights) to apply for each domain 
+  mob_decr <- -0.069 * (mob == 2) - 0.314 * (mob == 3)
+  selfc_decr <- -0.104 * (selfc == 2) - 0.214 * (selfc == 3)
+  usualact_decr <- -0.036 * (usualact == 2) - 0.094 * (usualact == 3)
+  pain_decr <- -0.123 * (pain == 2) - 0.386 * (pain == 3)
+  anx_decr <- -0.071 * (anx == 2) - 0.236 * (anx==3)
+  
+  # constant term applied if any domain rated 3
+  n3 <- -0.269 * (mob == 3 | selfc == 3 | usualact == 3 | pain == 3 | anx == 3) 
+  
+  # utility score 
+  score <- 1 + constant + mob_decr + selfc_decr + usualact_decr + pain_decr + anx_decr + n3
+  
+  # return value: utility score
+  return(score)
+}
+
+
+utility_calc(mob = 1, selfc = 1, usualact = 1, pain = 1, anx = 1)
+utility_calc(mob = 3, selfc = 2, usualact = 1, pain = 1, anx = 1)
+```
+
+------------------------------------------------------------------------
+
+## Avoid unnecessary repetition: tips
+
+* If you see a repetition, ask whether it can be parameterised;
+* parameterising reduces errors due to copy-pasting;
+* any changes only need to be implemented once;
+* use simple structures; nest if necessary;
+* ask AI what can be parameterised and how!
+
+------------------------------------------------------------------------
+
+## Use a master file to make the analysis reproducible
+
+```r
+
+### example run_all.R file ----
+
+source("1_raw_to_r.R")
+source("2_data_prep_all.R")
+source("3_data_extraction_biology.R")
+source("4_analysis_biology.R")
+source("checks_biology.R")
+
+```
+
+Other possible files:
+
+* 4_0_analysis_biology_preamble.R
+* functions_biology.R
+* functions_global.R
+
+------------------------------------------------------------------------
+
+## Top-10 tidyverse stylistic suggestions
+
+1. Use meaningful `snake_case` names
+1. Use spaces consistently
+1. Break long lines of code
+1. Indent to show structure
+1. Use blank lines to separate ideas
+1. Comment decisions and context
+1. Organise scripts into clear sections
+1. Use descriptive file names
+1. Use `<-` for assignment and `TRUE` / `FALSE`
+1. Keep pipes simple and readable
+
+------------------------------------------------------------------------
+
+## So, is my code any good?
+
+### 🟢 Strong
+- Clear sections
+- Meaningful variable names
+- Comments that explain decisions
+- Important settings made explicit
+- Checks throughout the analysis
+- Functions and loops reduce repetition
+- Raw and processed data kept separate
+- Reproducible project structure
+
+### 🟡 Could be better
+- Intermediate objects often called `temp`, `alpha`, `beta`, `gamma`
+- Some very long lines and pipelines
+- Some comments explain what, rather than why
+- A few filenames are less descriptive / less Tidyverse-style
+
+------------------------------------------------------------------------
+
+## How can AI help with writing good code?
+
+* review your code against a set of rules ;
+* generate the set of rules for code review;
+* suggest ways to simplify or structure the code;
+* generate example datasets, heavily commented code and teaching examples;
+* generate reports with Quarto, create code libraries, do vibe coding ...
+* <span style="color:red;">But you still need to read, understand and check the code!</span>
+
+<center><img src="images/code_works_why.jpg" height="500"/></center>
+
+<center><font size = "3">Source: <https://x.com/csgeek/status/1465684368412786692></font></center>
+
+
+------------------------------------------------------------------------
+
+## What am I NOT using AI for?
+
+* Understanding the data and making decisions;
+* writing code / text / presentations from scratch;
+* vibe coding (not yet anyway...);
+* loading identifiable-level data;
+* creating memes.
+
+::: {.mybox}
+Create a funny meme about chatGPT not having a sense a humour
+:::
+
+<center><img src="images/chatgpt_meme.png" height="500"/></center>
+
+------------------------------------------------------------------------
+
+## Summary: good coding habits
+
+1. Clear sections make the structure visible
+1. Meaningful names give context
+1. Simple steps make problems easier to isolate
+1. Comments explain the reasoning
+1. Important settings are easy to find
+1. Run code in small, testable chunks
+1. Check results — not just whether the code runs
+1. Keep raw data safe
+1. Use functions and loops instead of unnecessary repetition
+1. Keep the whole workflow reproducible
+
+<span style="color:red;">The habits are independent of AI. But AI can help with them. </span>
+
+------------------------------------------------------------------------
+
+## Thank you! {style="text-align: center;"}
+
+<br> 
+
+<center><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" height="550"></center>
+
+<center><font size = "3"> GIF from [https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif](https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif)</font></center>
+
+<br>
+
+[iryna.schlackow\@admin.ox.ac.uk](mailto:iryna.schlackow@admin.ox.ac.uk)
